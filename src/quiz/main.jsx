@@ -7,6 +7,7 @@ import MainLayout from './layouts/MainLayout';
 import AuthLayout from './layouts/AuthLayouts';
 
 const Dashboard = React.lazy(() => import("./pages/Dashboard"));
+const ProductDetail = React.lazy(() => import("./pages/ProductDetail"));
 import Order from './pages/Order';
 import OList from './pages/List';
 import Customer from './pages/Customer';
@@ -19,6 +20,7 @@ import Login from './pages/auth/Login';
 import Register2 from './pages/auth/Register2';
 import Forgot from './pages/auth/Forgot';
 import User from './pages/User';
+import Products from './pages/Products';
 
 // ✅ Tidak perlu lagi cek isAuthenticated
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -34,6 +36,8 @@ root.render(
           <Route path="/customer" element={<Customer />} />
           <Route path="/customer/list" element={<CustomerList />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:id" element={<ProductDetail />} />
           <Route path="/user" element={<User />} />
         </Route>
 

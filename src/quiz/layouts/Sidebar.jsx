@@ -1,6 +1,9 @@
 import { FaHome, FaBookOpen, FaUser } from "react-icons/fa";
 import { GoDotFill } from "react-icons/go";
 import { Link, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { MdFastfood } from "react-icons/md";
+
 
 export default function Sidebar() {
     const navigate = useNavigate();
@@ -43,6 +46,7 @@ export default function Sidebar() {
                         </ul>
                     </li>
 
+                   
                     <li>
                         <Link to="/customer" className="hover:text-green-500 flex items-center rounded-xl p-4 font-medium text-gray-600 hover:bg-green-200 hover:font-extrabold">
                             <FaBookOpen className="mr-2" /> Customers
@@ -66,6 +70,23 @@ export default function Sidebar() {
                         <Link to="/contact" className="hover:text-green-500 flex items-center rounded-xl p-4 font-medium text-gray-600 hover:bg-green-200 hover:font-extrabold">
                             <FaUser className="mr-2" /> Contact
                         </Link>
+                    </li>
+
+                    <li>
+                    <NavLink
+                        id="menu-4"
+                        to="/products"
+                        className={({ isActive }) =>
+                            `flex items-center rounded-xl p-4 font-medium ${
+                                isActive
+                                    ? 'text-green-600 bg-green-200 font-extrabold'
+                                    : 'text-gray-600 hover:text-green-500 hover:bg-green-200 hover:font-extrabold'
+                            }`
+                        }
+                    >
+                        <MdFastfood className="mr-2" />
+                        Products
+                    </NavLink>
                     </li>
 
                     <li>
